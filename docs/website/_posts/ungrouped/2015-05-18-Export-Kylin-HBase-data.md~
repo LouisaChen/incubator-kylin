@@ -16,7 +16,7 @@ Steps:
 {% highlight Groff markup %}
 hbase org.apache.hadoop.util.RunJar /${KYLIN_HOME}/lib/kylin-job-(version).jar org.apache.kylin.job.hadoop.cube.StorageCleanupJob --delete true
 {% endhighlight %}
-2. List all HBase tables, iterate and then export each Kylin table to HDFS; See https://hbase.apache.org/book/ops_mgt.html#export
+2. List all HBase tables, iterate and then export each Kylin table to HDFS; See [https://hbase.apache.org/book/ops_mgt.html#export](https://hbase.apache.org/book/ops_mgt.html#export)
 
 3. Copy the export folder from HDFS to local file system, and then archive it;
 
