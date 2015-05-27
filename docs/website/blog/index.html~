@@ -1,3 +1,8 @@
+---
+layout: default
+title: Blog
+---
+
 <!--
 * Licensed to the Apache Software Foundation (ASF) under one
 * or more contributor license agreements.  See the NOTICE file
@@ -16,11 +21,6 @@
 * limitations under the License.
 -->
 
----
-layout: default
-title: Blog
----
-
 
 <main id="main" >
 <section id="first" class="main">
@@ -34,7 +34,9 @@ title: Blog
             <p class="aboutkylin" style="font-size:1.2em">Comming Soon...</p>
             -->
              <ul class="post-list">
-            {% for post in site.posts %}
+            {% for category in site.categories %}     <!-- categories -->
+            {% if category[0]  != 'blog' %}
+            {% for post in category[1] %}
             <li>
             <!--
             <span align="left" class="content-header">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -43,6 +45,8 @@ title: Blog
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
       </li>
+    {% endfor %}
+    {% endif %}
     {% endfor %}
   </ul>
 
